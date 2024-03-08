@@ -1,0 +1,7 @@
+{
+  "name": "ion-t-libay",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
