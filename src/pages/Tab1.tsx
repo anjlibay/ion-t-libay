@@ -22,7 +22,7 @@ const Tab1: React.FC = () => {
               <img alt="Silhouette of mountains" src="../src/assets/image/profile.png" />
               <IonCardHeader>
                 <IonCardTitle>Student</IonCardTitle>
-                <IonCardSubtitle>Angelay Libay</IonCardSubtitle>
+                <IonCardSubtitle>Angela N. Libay</IonCardSubtitle>
               </IonCardHeader>
 
               <IonCardContent> There are always flowers for those who want to see them.</IonCardContent>
