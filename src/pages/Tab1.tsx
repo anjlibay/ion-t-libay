@@ -28,7 +28,7 @@ const Tab1: React.FC = () => {
                   <IonCardSubtitle>Angela N. Libay</IonCardSubtitle>
                 </IonCardHeader>
 
-              <IonCardContent> There are always flowers for those who want to see them.</IonCardContent>
+                <IonCardContent style={{ color: 'lightblue' }}>There are always flowers for those who want to see them.</IonCardContent>
 
           <IonButton id="present-alert" expand="full" color="tertiary" >Quick Facts</IonButton>
               <IonAlert
