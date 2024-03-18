@@ -52,7 +52,7 @@ const Tab1: React.FC = () => {
             <IonCardSubtitle>BSIT Student, 3rd Year - NBSC</IonCardSubtitle>
           </IonCardHeader>
 
-          <IonCardContent><i>❤️ BUYOOOOOOGGGG!!!</i> 😊 🙏 &#x1F446;</IonCardContent>
+          <IonCardContent><i>❤️ Blessed</i> 😊 🙏 &#x1F446;</IonCardContent>
 
           <IonButton onClick={() => setShowAlert(true)} expand="block" color="primary">Quick Facts</IonButton>
 
