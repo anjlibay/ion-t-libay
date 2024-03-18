@@ -1,22 +1,48 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
+// Tab2.tsx
+import React, { useState } from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
 
 const Tab2: React.FC = () => {
+  const [counter, setCounter] = useState<number>(0);
+
+  const incrementCounter = () => {
+    setCounter(counter + 1);
+  };
+
+  const resetCounter = () => {
+    setCounter(0);
+  };
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Click counter</IonTitle>
+          <IonTitle>Click Counter</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Click counter</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+      <IonContent fullscreen className="ion-padding">
+        <IonGrid>
+          <IonRow>
+            <IonCol size="12" className="ion-text-center">
+              <p>Click the button to increase the count:</p>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol size="12" className="ion-text-center">
+              <IonButton onClick={incrementCounter}>Click Me</IonButton>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol size="12" className="ion-text-center">
+              <p>Counter: {counter}</p>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol size="12" className="ion-text-center">
+              <IonButton onClick={resetCounter}>Reset</IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
