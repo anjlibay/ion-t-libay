@@ -33,7 +33,7 @@ const Calculator: React.FC = () => {
           <IonTitle>Calculator</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen className="ion-padding" style={{ backgroundColor: 'dark' }}>
+      <IonContent fullscreen className="ion-padding" style={{ backgroundColor: 'light' }}>
         <IonGrid>
           <IonRow>
             <IonCol size="12">

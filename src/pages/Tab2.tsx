@@ -20,7 +20,7 @@ const Tab2: React.FC = () => {
           <IonTitle>Click Counter</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen className="ion-padding">
+      <IonContent fullscreen className="ion-padding" style={{ backgroundColor: 'lightblue' }}>
         <IonGrid>
           <IonRow>
             <IonCol size="12" className="ion-text-center">
