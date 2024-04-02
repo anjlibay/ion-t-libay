@@ -30,12 +30,12 @@ const Home: React.FC = () => {
                     <IonRow>
                         <IonCol>
                             <IonCard>
-                                <img src="./src/assets/img/" alt="Placeholder" />
+                                <img src="../src/assets/img/home-page-png.jpg" alt="Placeholder" />
                                 <IonCardHeader>
-                                    <IonCardTitle>Featured Item</IonCardTitle>
+                                    <IonCardTitle>Welcome to Gelay's property</IonCardTitle>
                                 </IonCardHeader>
                                 <IonCardContent>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nulla libero.
+                                You only live once, but if you do it right, once is enough.
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>
@@ -63,12 +63,7 @@ const Home: React.FC = () => {
                 {/* Profile and Settings */}
                 <IonGrid>
                     <IonRow>
-                        <IonCol>
-                            <IonButton expand="block">
-                                <IonIcon slot="start" icon={person} />
-                                Profile
-                            </IonButton>
-                        </IonCol>
+                        
                         <IonCol>
                             <IonButton expand="block">
                                 <IonIcon slot="start" icon={settings} />
@@ -77,6 +72,7 @@ const Home: React.FC = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
+                
 
             </IonContent>
         </IonPage>
