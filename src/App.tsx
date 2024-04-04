@@ -12,7 +12,7 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { calculatorOutline, ellipse, fingerPrintOutline, homeOutline, personOutline, speedometerOutline, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Profile';
-import Tab2 from './pages/Tab2';
+import Tab2 from './pages/Click_counter';
 import Tab3 from './pages/Tab3';
 
 //Home resources 

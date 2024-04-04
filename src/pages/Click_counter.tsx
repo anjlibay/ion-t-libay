@@ -1,8 +1,8 @@
-// Tab2.tsx
+// Click-counter.tsx
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
 
-const Tab2: React.FC = () => {
+const Click_counter: React.FC = () => {
   const [counter, setCounter] = useState<number>(0);
 
   const incrementCounter = () => {
@@ -48,4 +48,4 @@ const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default Click_counter;
