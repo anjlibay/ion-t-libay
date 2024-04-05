@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonAlert, IonActionSheet, IonModal } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
+import './Profile.css';
 
-const Tab1: React.FC = () => {
+const Profile: React.FC = () => {
   const history = useHistory();
   const [showAlert, setShowAlert] = useState(false);
   const [showActionSheet, setShowActionSheet] = useState(false);
@@ -146,4 +146,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default Profile;
