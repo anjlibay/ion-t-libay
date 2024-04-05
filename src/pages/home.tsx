@@ -6,7 +6,7 @@ import {
 
 
 //CSS
-//  import './profile.css';
+//  import './Profile.css';
 
 import { search, notifications, settings, person } from 'ionicons/icons';
 

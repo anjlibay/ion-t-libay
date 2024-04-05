@@ -16,7 +16,7 @@ import Tab2 from './pages/Click_counter';
 import Tab3 from './pages/Calculator';
 
 //Home resources 
-import Home from './pages/Home';
+import Home from './pages/home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -47,11 +47,11 @@ const App: React.FC = () => (
 
           {/*Application default route*/}
           <Route exact path="/">
-            <Redirect to="/home"/>
+            <Redirect to="/Home"/>
           </Route>
 
           {/* Home Router*/}  
-          <Route exact path="/home">
+          <Route exact path="/Home">
             <Home />
           </Route>
 
@@ -63,9 +63,6 @@ const App: React.FC = () => (
           </Route>
           <Route path="/tab3">
             <Tab3 />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
