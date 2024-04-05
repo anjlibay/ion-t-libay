@@ -16,7 +16,7 @@ import Tab2 from './pages/Click_counter';
 import Tab3 from './pages/Calculator';
 
 //Home resources 
-import Home from './pages/home';
+import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
