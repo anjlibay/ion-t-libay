@@ -1,6 +1,6 @@
 // Calculator.tsx
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonInput } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonBackButton, IonButtons, IonInput } from '@ionic/react';
 import './Calculator.css';
 
 const Calculator: React.FC = () => {
@@ -33,6 +33,10 @@ const Calculator: React.FC = () => {
           <IonTitle>Calculator</IonTitle>
         </IonToolbar>
       </IonHeader>
+      <IonButtons slot="start">
+          <IonBackButton defaultHref="/" />
+        </IonButtons>
+
       <IonContent fullscreen className="ion-padding" style={{ backgroundColor: 'light' }}>
         <IonGrid>
           <IonRow>
