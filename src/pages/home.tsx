@@ -1,156 +1,97 @@
-import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonBackButton, IonButtons, IonList, IonItem, IonLabel, IonCheckbox, IonInput, IonIcon, IonAlert } from '@ionic/react';
-import { trashOutline, createOutline } from 'ionicons/icons';
+import React from 'react';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonIcon,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
+} from '@ionic/react';
+import { pulseOutline, calculatorOutline } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
 
-const To_do_list: React.FC = () => {
-  const [todos, setTodos] = useState<{ id: number; text: string; completed: boolean }[]>([]);
-  const [newTodoText, setNewTodoText] = useState<string>('');
-  const [editTodoId, setEditTodoId] = useState<number | null>(null);
-  const [editTodoText, setEditTodoText] = useState<string>('');
-  const [showDeleteAlert, setShowDeleteAlert] = useState<boolean>(false);
-  const [deleteTodoId, setDeleteTodoId] = useState<number | null>(null);
+const Home: React.FC = () => {
+  const history = useHistory();
 
-  const toggleTodo = (id: number) => {
-    setTodos(prevTodos =>
-      prevTodos.map(todo =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+  const goToClickCounter = () => {
+    history.push('/click_counter');
   };
 
-  const addTodo = () => {
-    if (newTodoText.trim() !== '') {
-      setTodos(prevTodos => [
-        ...prevTodos,
-        {
-          id: prevTodos.length + 1,
-          text: newTodoText,
-          completed: false
-        }
-      ]);
-      setNewTodoText('');
-    }
+  const goToCalculator = () => {
+    history.push('/calculator');
   };
 
-  const deleteTodo = () => {
-    if (deleteTodoId !== null) {
-      setTodos(prevTodos => prevTodos.filter(todo => todo.id !== deleteTodoId));
-    }
-    setShowDeleteAlert(false);
+  const goToToDoList = () => {
+    history.push('/to_do_list');
   };
-
-  const handleEditTodo = (id: number, text: string) => {
-    setEditTodoId(id);
-    setEditTodoText(text);
-  };
-
-  const saveEditedTodo = () => {
-    if (editTodoId !== null && editTodoText.trim() !== '') {
-      setTodos(prevTodos =>
-        prevTodos.map(todo =>
-          todo.id === editTodoId ? { ...todo, text: editTodoText } : todo
-        )
-      );
-    }
-    setEditTodoId(null);
-    setEditTodoText('');
-  };
-
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Todo List</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
+        <hr />
       </IonHeader>
-
       <IonContent fullscreen className="ion-padding">
-        <IonGrid>
-          <IonRow className="ion-align-items-center">
-            <IonCol size="12" className="ion-text-center">
-              <h1>Todo List</h1>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol size="12">
-              <IonInput
-                placeholder="Enter a task"
-                value={newTodoText}
-                onIonChange={(e) => setNewTodoText(e.detail.value!)}
-              />
-              <IonButton expand="block" onClick={addTodo}>Add Task</IonButton>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol size="12">
-              <IonList>
-                {todos.map(todo => (
-                  <IonItem key={todo.id}>
-                    {editTodoId === todo.id ? (
-                      <IonInput
-                        value={editTodoText}
-                        onIonChange={(e) => setEditTodoText(e.detail.value!)}
-                        onBlur={saveEditedTodo}
-                        autoFocus
-                      />
-                    ) : (
-                      <>
-                        <IonLabel
-                          style={{
-                            textDecoration: todo.completed ? 'line-through' : 'none',
-                            flex: 1
-                          }}
-                          onClick={() => handleEditTodo(todo.id, todo.text)}
-                        >
-                          {todo.text}
-                        </IonLabel>
-                        <div className="ion-text-end">
-                          <IonButton fill="clear" onClick={() => handleEditTodo(todo.id, todo.text)}>
-                            <IonIcon icon={createOutline} />
-                          </IonButton>
-                          <IonButton fill="clear" onClick={() => {
-                            setDeleteTodoId(todo.id);
-                            setShowDeleteAlert(true);
-                          }}>
-                            <IonIcon icon={trashOutline} />
-                          </IonButton>
-                        </div>
-                      </>
-                    )}
-                    <IonCheckbox
-                      slot="start"
-                      checked={todo.completed}
-                      onIonChange={() => toggleTodo(todo.id)}
-                    />
-                  </IonItem>
-                ))}
-              </IonList>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-        <IonAlert
-          isOpen={showDeleteAlert}
-          onDidDismiss={() => setShowDeleteAlert(false)}
-          header={'Confirm Deletion'}
-          message={'Are you sure you want to delete this task?'}
-          buttons={[
-            {
-              text: 'Cancel',
-              role: 'cancel',
-              cssClass: 'secondary',
-              handler: () => {
-                setDeleteTodoId(null);
-              }
-            },
-            {
-              text: 'Delete',
-              handler: deleteTodo
-            }
-          ]}
-        />
+        <div className="ion-text-center"> {/* Centering content */}
+        <IonCard id="card1" onClick={goToClickCounter} style={{ width: '350px', cursor: 'pointer' }} color="danger">
+              <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
+                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
+                  <img alt="" id="click_counter" src="../src/assets/img/click_counter.gif" />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-danger)', color: 'danger', padding: 0 }}>
+                  Click Counter
+                </div>
+              </IonCardContent>
+            </IonCard>
+  
+  
+        <IonCard id="card2" onClick={goToCalculator} style={{ width: '350px', cursor: 'pointer' }} color="warning">
+        <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
+                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
+                  <img alt="" id="click_counter" src="../src/assets/img/calculator.gif" />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-warning)', color: 'white', padding: 0 }}>
+                  Calculator
+                </div>
+              </IonCardContent>
+            </IonCard>
+          
+          <IonCard id="card3" onClick={goToToDoList} style={{ width: '350px', cursor: 'pointer' }} color="warning">
+          <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
+                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
+                  <img alt="" id=" To_do_list" src="../src/assets/img/To_do_list.gif" />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-success)', color: 'white', padding: 0 }}>
+                  Todo List
+                </div>
+              </IonCardContent>
+            </IonCard>
+  
+          <IonCard id="card4" style={{ width: '350px' }} color="dark">
+          <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
+                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
+                  <img alt="" id="blank" src="../src/assets/img/blank2.gif" />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-primary)', color: 'white', padding: 0 }}>
+                  Blank
+                </div>
+              </IonCardContent>
+            </IonCard>
+
+        </div>
       </IonContent>
     </IonPage>
   );
+  
 };
 
-export default To_do_list;
+export default Home;
