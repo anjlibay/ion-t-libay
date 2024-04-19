@@ -7,8 +7,7 @@ interface Todo {
   text: string;
   completed: boolean;
 }
-
-const To_do_list: React.FC = () => {
+const Todo_list: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodoText, setNewTodoText] = useState<string>('');
 
@@ -100,4 +99,6 @@ const To_do_list: React.FC = () => {
   );
 };
 
-export default To_do_list;
+export default Todo_list;
+
+
