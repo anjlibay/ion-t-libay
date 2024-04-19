@@ -67,6 +67,9 @@ const App: React.FC = () => (
             <Click_counter />
           </Route>
 
+          <Route exact path="/to_do_list">
+            < To_do_list />
+          </Route>
 
           <Route exact path="/profile">
             <Profile />
