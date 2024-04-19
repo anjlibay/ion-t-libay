@@ -25,9 +25,6 @@ const Home: React.FC = () => {
     history.push('/calculator');
   };
 
-  const goToToDoList = () => {
-    history.push('/to_do_list');
-  };
   return (
     <IonPage>
       <IonHeader>
@@ -48,8 +45,7 @@ const Home: React.FC = () => {
                   Click Counter
                 </div>
               </IonCardContent>
-            </IonCard>
-  
+            </IonCard> 
   
         <IonCard id="card2" onClick={goToCalculator} style={{ width: '350px', cursor: 'pointer' }} color="warning">
         <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
@@ -63,14 +59,14 @@ const Home: React.FC = () => {
               </IonCardContent>
             </IonCard>
           
-          <IonCard id="card3" onClick={goToToDoList} style={{ width: '350px', cursor: 'pointer' }} color="warning">
+            <IonCard id="card4" style={{ width: '350px' }} color="dark">
           <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
                   {/* <IonIcon icon={pulseOutline} slot="start" /> */}
-                  <img alt="" id=" To_do_list" src="../src/assets/img/To_do_list.gif" />
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-success)', color: 'white', padding: 0 }}>
-                  Todo List
+                  <img alt="" id=" Todo_list" src="../src/assets/img/To_do_list.gif" />
+                  </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-primary)', color: 'white', padding: 0 }}>
+                  Blank
                 </div>
               </IonCardContent>
             </IonCard>
@@ -95,3 +91,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+
