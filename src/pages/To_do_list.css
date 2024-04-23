@@ -1,0 +1,24 @@
+/* Add this CSS to your existing stylesheet or create a new one */
+
+/* Style for completed tasks */
+.completed {
+    text-decoration: line-through; /* Add a line-through effect for completed tasks */
+    color: #999; /* Change the color of completed tasks to a muted gray */
+  }
+  
+  /* Style for the delete and edit buttons */
+  .ion-text-end ion-button {
+    --padding-end: 8px; /* Adjust padding to provide space between buttons */
+    --padding-start: 8px; /* Adjust padding to provide space between buttons */
+  }
+  
+  /* Style for the delete icon */
+  ion-icon[name="trash-outline"] {
+    color: #ff6347; /* Change the color of the trash icon to red */
+  }
+  
+  /* Style for the edit icon */
+  ion-icon[name="create-outline"] {
+    color: #ffa500; /* Change the color of the edit icon to orange */
+  }
+  

@@ -49,19 +49,19 @@ const To_do_list: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="primary"> {/* Change the toolbar color */}
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/" />
+          </IonButtons>
           <IonTitle>Todo List</IonTitle>
         </IonToolbar>
       </IonHeader>
       
-      <IonButtons slot="start">
-        <IonBackButton defaultHref="/" />
-      </IonButtons>
       <IonContent fullscreen className="ion-padding" style={{ backgroundColor: '#f0f0f0' }}>
         <IonGrid>
           <IonRow className="ion-align-items-center">
             <IonCol size="12" className="ion-text-center">
-              <h1>Todo List</h1>
+              <h1>Todo List</h1> {/* Add a heading */}
             </IonCol>
           </IonRow>
           <IonRow>
@@ -71,7 +71,7 @@ const To_do_list: React.FC = () => {
                 value={newTodoText}
                 onIonChange={(e) => setNewTodoText(e.detail?.value || '')}
               />
-              <IonButton expand="block" onClick={addTodo}>Add Task</IonButton>
+              <IonButton expand="block" color="success" onClick={addTodo}>Add Task</IonButton> {/* Change button color */}
             </IonCol>
           </IonRow>
           <IonRow>
@@ -79,7 +79,7 @@ const To_do_list: React.FC = () => {
               <IonList>
                 {todos.map(todo => (
                   <IonItem key={todo.id}>
-                    <IonLabel>{todo.text}</IonLabel>
+                    <IonLabel className={todo.completed ? 'completed' : ''}>{todo.text}</IonLabel> {/* Add class for completed tasks */}
                     <div className="ion-text-end">
                       <IonButton fill="clear" onClick={() => editTodo(todo.id, prompt("Edit task:", todo.text) || todo.text)}>
                         <IonIcon icon={createOutline} />
