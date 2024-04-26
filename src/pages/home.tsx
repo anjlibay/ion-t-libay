@@ -1,97 +1,119 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonIcon,
+  IonBackButton,
+  IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
+  IonCardSubtitle,
   IonCardTitle,
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonPage,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+  IonItemDivider,
+  IonSearchbar
 } from '@ionic/react';
-import { pulseOutline, calculatorOutline } from 'ionicons/icons';
-import { useHistory } from 'react-router-dom';
 
-const Home: React.FC = () => {
-  const history = useHistory();
+//Custom CSS
+import './Home.css';
 
-  const goToClickCounter = () => {
-    history.push('/click_counter');
-  };
+//Ionic Icons
+import { speedometerOutline,calculator,pencil, chatbubble} from 'ionicons/icons';
 
-  const goToCalculator = () => {
-    history.push('/calculator');
-  };
+//Additional Routes
+import Click_counter from './Click_counter';
 
-  const goToToDoList = () => {
-    history.push('/to_do_list');
-  };
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Home</IonTitle>
-        </IonToolbar>
-        <hr />
-      </IonHeader>
-      <IonContent fullscreen className="ion-padding">
-        <div className="ion-text-center"> {/* Centering content */}
-        <IonCard id="card1" onClick={goToClickCounter} style={{ width: '350px', cursor: 'pointer' }} color="danger">
-              <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
-                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
-                  <img alt="" id="click_counter" src="../src/assets/img/click_counter.gif" />
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-danger)', color: 'danger', padding: 0 }}>
-                  Click Counter
-                </div>
-              </IonCardContent>
-            </IonCard>
+const cardData = [
+  {
+    title: 'Click Counter',
+    icon: speedometerOutline,
+    subtitle: 'Applet #1',
+    link: '/Click_counter'
+  },
+  {
+    title: 'Calculator',
+    icon: calculator,
+    subtitle: 'Applet #2',
+    link: 'Ccalculator'
+  },
+  {
+    title: 'To Do List',
+    icon: pencil,
+    subtitle: 'Applet #3',
+    link: '/To_do_list'
+  },
+  {
+    title: 'Quotes Generator',
+    icon: chatbubble,
+    subtitle: 'Applet #4',
+    link: '/quotesgenerator'
+  }
   
-  
-        <IonCard id="card2" onClick={goToCalculator} style={{ width: '350px', cursor: 'pointer' }} color="warning">
-        <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
-                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
-                  <img alt="" id="click_counter" src="../src/assets/img/calculator.gif" />
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-warning)', color: 'white', padding: 0 }}>
-                  Calculator
-                </div>
-              </IonCardContent>
-            </IonCard>
+];
+
+  const Home: React.FC = () => {
+
+    {/*Dynamic Search*/}
+    const [searchTerm, setSearchTerm] = useState<string>('');
+
+    return (
+      <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Home</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent fullscreen>
+          <IonHeader collapse="condense">
+            <IonToolbar>
+              <IonTitle size="large">Home</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+        {/*Dynamic Search*/}
+        <>
+          <IonSearchbar 
+            value={searchTerm} 
+            onIonInput={(e) => setSearchTerm(e.target.value ?? '')} 
+          />
           
-          <IonCard id="card3" onClick={goToToDoList} style={{ width: '350px', cursor: 'pointer' }} color="warning">
-          <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
-                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
-                  <img alt="" id=" To_do_list" src="../src/assets/img/To_do_list.gif" />
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-success)', color: 'white', padding: 0 }}>
-                  Todo List
-                </div>
-              </IonCardContent>
-            </IonCard>
+          {cardData
+            .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map((card, index) => (
+              <IonCard key={index} href={card.link}>
+                <IonCardHeader>
+                  <IonCardTitle>
+                    <IonGrid>
+                      <IonRow>
+                        <IonCol push=".75">
+                          <IonIcon className="home-card-icon" icon={card.icon} color="primary" />
+                        </IonCol>
+                        <IonCol pull='3'>
+                          <div className="home-card-title">{card.title}</div>
+                          <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
+                        </IonCol>
+                      </IonRow>
+                    </IonGrid>
+                  </IonCardTitle>
+                </IonCardHeader>
+              </IonCard>
+          ))}
+        </>
+          </IonContent>
+        </IonPage>
+    );
+  };
   
-          <IonCard id="card4" style={{ width: '350px' }} color="dark">
-          <IonCardContent style={{ height: '70px', fontSize: '30px', display: 'flex', alignItems: 'center', padding: 0 }}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '20%', backgroundColor: 'var(--ion-color-light)', padding: 0 }}>
-                  {/* <IonIcon icon={pulseOutline} slot="start" /> */}
-                  <img alt="" id="blank" src="../src/assets/img/blank2.gif" />
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', flex: '80%', backgroundColor: 'var(--ion-color-primary)', color: 'white', padding: 0 }}>
-                  Blank
-                </div>
-              </IonCardContent>
-            </IonCard>
-
-        </div>
-      </IonContent>
-    </IonPage>
-  );
+  //
+  export default Home;
   
-};
-
-export default Home;
