@@ -45,7 +45,7 @@ const cardData = [
     title: 'Calculator',
     icon: calculator,
     subtitle: 'Applet #2',
-    link: 'Ccalculator'
+    link: 'Calculator'
   },
   {
     title: 'To Do List',

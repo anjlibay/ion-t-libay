@@ -25,14 +25,14 @@ const Click_counter: React.FC = () => {
       </IonButtons>
       <IonContent fullscreen className="ion-padding" style={{ backgroundColor: '#f0f0f0' }}>
         <IonGrid>
-          <IonRow className="ion-align-items-center">
+          {/* <IonRow className="ion-align-items-center">
             <IonCol size="12" className="ion-text-center">
               <img src="https://via.placeholder.com/150" alt="Button" style={{ width: '150px', height: '150px' }} />
             </IonCol>
-          </IonRow>
+          </IonRow> */}
           <IonRow className="ion-align-items-center">
             <IonCol size="12" className="ion-text-center">
-              <IonButton onClick={incrementCounter} expand="block" color="success" style={{ fontSize: '24px' }}>Click Me!</IonButton>
+              <IonButton onClick={incrementCounter} expand="block" color="primary" style={{ fontSize: '24px' }}>Click Me!</IonButton>
             </IonCol>
           </IonRow>
           <IonRow className="ion-align-items-center">
