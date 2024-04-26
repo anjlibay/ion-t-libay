@@ -28,12 +28,12 @@ import {
   IonAvatar,
   IonThumbnail
 } from '@ionic/react';
-import './profile.css';
+import './Profile.css';
 
 //Dynamic data reference
 import rizzCard from '../assets/json/rizzCard.json';
 
-const QuotesGenerator: React.FC = () => {
+const Quotes_generator: React.FC = () => {
 
   const [showAlert, setShowAlert] = useState(false);
   const [randomIndex, setRandomIndex] =  useState<number | null>(null); // State to store random index
@@ -105,4 +105,4 @@ const QuotesGenerator: React.FC = () => {
   );
 };
 
-export default  QuotesGenerator;
+export default  Quotes_generator;
