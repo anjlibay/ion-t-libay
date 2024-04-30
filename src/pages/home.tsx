@@ -22,17 +22,15 @@ import {
   IonTitle,
   IonToolbar,
   IonItemDivider,
-  IonSearchbar
+  IonSearchbar,
+  IonBadge
 } from '@ionic/react';
 
 //Custom CSS
 import './Home.css';
 
 //Ionic Icons
-import { speedometerOutline,calculator,pencil, chatbubble} from 'ionicons/icons';
-
-//Additional Routes
-import Click_counter from './Click_counter';
+import { speedometerOutline,calculator,pencil, chatbubble, readerOutline, logoIonic,logoFirebase, logoReact} from 'ionicons/icons';
 
 const cardData = [
   {
@@ -58,9 +56,20 @@ const cardData = [
     icon: chatbubble,
     subtitle: 'Applet #4',
     link: '/Quotes_generator'
+  },
+  {
+    title: 'Notes',
+    icon: readerOutline,
+    subtitle: 'Applet #5',
+    link: '/notes',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact, 
+      tag3: logoFirebase 
+    }
   }
-  
-];
+
+  ];
 
   const Home: React.FC = () => {
 
