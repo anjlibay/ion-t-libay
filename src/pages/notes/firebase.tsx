@@ -8,28 +8,25 @@ import { getFirestore } from 'firebase/firestore';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+  
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-// Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBYbvCisgg9dhOt3RS8UoaQSPY62kNABEg",
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    authDomain: "it35-libay.firebaseapp.com",
 
-const firebaseConfig = {
+    projectId: "it35-libay",
 
-  apiKey: "AIzaSyDVrOvSu6Q28OOfinI1nR3PbCeeFy2xk5Y",
+    storageBucket: "it35-libay.appspot.com",
+    
+    messagingSenderId: "124068013256",
 
-  authDomain: "certain-density-400310.firebaseapp.com",
+    appId: "1:124068013256:web:2c875f5b166dbd40d031fd",
 
-  projectId: "certain-density-400310",
-
-  storageBucket: "certain-density-400310.appspot.com",
-
-  messagingSenderId: "179403612734",
-
-  appId: "1:179403612734:web:b0e979b44c0792864ca76f",
-
-  measurementId: "G-3XE6Z3V18X"
-
-};
+    measurementId: "G-ZGWXMGJZ99"
+  };
 
 
 // Initialize Firebase
