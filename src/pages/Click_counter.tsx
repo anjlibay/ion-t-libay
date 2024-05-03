@@ -16,13 +16,14 @@ const Click_counter: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+        <IonButtons slot="start">
+        <IonBackButton defaultHref="/" />
+      </IonButtons>
           <IonTitle>Click Counter</IonTitle>
         </IonToolbar>
       </IonHeader>
       
-      <IonButtons slot="start">
-        <IonBackButton defaultHref="/" />
-      </IonButtons>
+
       <IonContent fullscreen className="ion-padding" style={{ backgroundColor: '#f0f0f0' }}>
         <IonGrid>
           {/* <IonRow className="ion-align-items-center">

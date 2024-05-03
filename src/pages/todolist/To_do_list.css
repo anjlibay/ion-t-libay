@@ -1,16 +1,16 @@
-.todolist-img-header{
+.To_do_list-img-header{
     width: 100%;
     height: 25vh; 
     background-size: cover;
     background-position: center;
 }
 
-.todolist-title{
+.To_do_list-title{
     text-align: center;
     font-size: 20px;
 }
 
-.todolist-form{
+.To_do_list-form{
     padding-left: 15px;
     font-size: 15px;
     height: auto;
@@ -19,6 +19,6 @@
     text-overflow: ellipsis; /* Display an ellipsis (...) to indicate clipped text */
 }
 
-.todolist-result{
+.To_do_list-result{
     font-size: 20px;
 }
