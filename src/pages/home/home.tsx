@@ -80,7 +80,9 @@ const cardData = [
       <IonPage>
         <IonHeader>
           <IonToolbar>
+            <IonButtons slot='start'>
             <IonTitle>Home</IonTitle>
+            </IonButtons>
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
@@ -99,7 +101,7 @@ const cardData = [
           {cardData
             .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((card, index) => (
-              <IonCard key={index} href={card.link}>
+              <IonCard key={index} routerLink={card.link} routerDirection='forward'>
                 <IonCardHeader>
                   <IonCardTitle>
                     <IonGrid>

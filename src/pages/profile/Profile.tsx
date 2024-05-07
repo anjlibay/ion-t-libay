@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonAlert, IonActionSheet, IonModal } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton,  IonButtons,IonAlert, IonActionSheet, IonModal } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import ExploreContainer from '../../components/ExploreContainer';
 import './Profile.css';
@@ -32,9 +32,11 @@ const Profile: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Profile</IonTitle>
-        </IonToolbar>
+      <IonToolbar>
+            <IonButtons slot='start'>
+            <IonTitle>Profile</IonTitle>
+            </IonButtons>
+          </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
