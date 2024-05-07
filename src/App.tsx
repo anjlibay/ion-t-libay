@@ -15,7 +15,7 @@ import { calculatorOutline, ellipse, home, personOutline, speedometerOutline, sq
 // Home resources
 import Home from './pages/home/home';
 
-import Profile from './pages/Profile';
+import Profile from './pages/profile/Profile';
 import Click_counter from './pages/click_counter/Click_counter'; 
 import Calculator from './pages/calculator/Calculator';
 import To_do_list from './pages/todolist/To_do_list';

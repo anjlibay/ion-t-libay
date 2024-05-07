@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonAlert, IonActionSheet, IonModal } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import ExploreContainer from '../components/ExploreContainer';
+import ExploreContainer from '../../components/ExploreContainer';
 import './Profile.css';
 
 const Profile: React.FC = () => {
