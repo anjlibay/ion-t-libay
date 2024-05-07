@@ -17,7 +17,7 @@ import Home from './pages/home';
 
 import Profile from './pages/Profile';
 import Click_counter from './pages/click_counter/Click_counter'; 
-import Calculator from './pages/Calculator';
+import Calculator from './pages/calculator/Calculator';
 import To_do_list from './pages/todolist/To_do_list';
 import Quotes_generator from './pages/quotes_generator/Quotes_generator';
 import Notes from './pages/notes/notes';
