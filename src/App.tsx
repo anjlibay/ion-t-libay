@@ -13,7 +13,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { calculatorOutline, ellipse, home, personOutline, speedometerOutline, square, triangle } from 'ionicons/icons';
 
 // Home resources
-import Home from './pages/home';
+import Home from './pages/home/home';
 
 import Profile from './pages/Profile';
 import Click_counter from './pages/click_counter/Click_counter'; 
