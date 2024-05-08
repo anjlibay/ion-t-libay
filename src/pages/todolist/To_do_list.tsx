@@ -171,7 +171,7 @@ const To_do_list: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-      <img className="To_do_list-img-header" alt="Silhouette of mountains" src="./src/assets/img/Todolist.jpeg" />
+      <img className="To_do_list-img-header" alt="Silhouette of mountains" src="https://raw.githubusercontent.com/anjlibay/ion-t-libay/prod/src/assets/img/Todolist.jpeg" />
      
               <IonInput
                 placeholder="Type task description here"
