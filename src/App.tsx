@@ -51,7 +51,7 @@ const App: React.FC = () => (
           
           {/* Application default route */}
 
-           <Route exact path="/ion-t-libay/home">
+           <Route exact path="/ion-t-libay/">
             <Redirect to="/ion-t-libay/home" />
           </Route>
 
@@ -64,23 +64,23 @@ const App: React.FC = () => (
             <Profile />
           </Route>
 
-          <Route exact path="/ion-t-libay/click_counter">
+          <Route exact path="/ion-t-libay/home/click_counter">
             <Click_counter />
           </Route>
 
-          <Route path="/ion-t-libay/calculator">
+          <Route path="/ion-t-libay/home/calculator">
             <Calculator />
           </Route>
 
-          <Route path="/ion-t-libay/to_do_list">
+          <Route path="/ion-t-libay/home/to_do_list">
             <To_do_list />
           </Route>
 
-          <Route path="/ion-t-libay/quotes_generator">
+          <Route path="/ion-t-libay/home/quotes_generator">
             <Quotes_generator />
           </Route>
 
-          <Route path="/ion-t-libay/notes">
+          <Route path="/ion-t-libay/home/notes">
             <Notes />
           </Route>
 
