@@ -13,11 +13,11 @@ import { IonReactRouter } from '@ionic/react-router';
 import { calculatorOutline, ellipse, home, personOutline, speedometerOutline, square, triangle } from 'ionicons/icons';
 
 // Home resources
-import Home from './pages/home';
+import Home from './pages/home/home';
 
-import Profile from './pages/Profile';
-import Click_counter from './pages/Click_counter'; 
-import Calculator from './pages/Calculator';
+import Profile from './pages/profile/Profile';
+import Click_counter from './pages/click_counter/Click_counter'; 
+import Calculator from './pages/calculator/Calculator';
 import To_do_list from './pages/todolist/To_do_list';
 import Quotes_generator from './pages/quotes_generator/Quotes_generator';
 import Notes from './pages/notes/notes';
@@ -50,34 +50,36 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           
           {/* Application default route */}
-           <Route exact path="/">
-            <Redirect to="/home" />
+           <Route exact path="/ion-t-libay/">
+            <Redirect to="/ion-t-libay/home" />
           </Route>
 
           {/* Home Router */}
-          <Route exact path="/home">
+          <Route exact path="/ion-t-libay/home">
             <Home />
           </Route>
 
-          <Route exact path="/profile">
+          <Route exact path="/ion-t-libay/profile">
             <Profile />
           </Route>
-          <Route exact path="/click_counter">
+
+          <Route exact path="/ion-t-libay/click_counter">
             <Click_counter />
           </Route>
-          <Route path="/calculator">
+
+          <Route path="/ion-t-libay/calculator">
             <Calculator />
           </Route>
 
-          <Route path="/to_do_list">
+          <Route path="/ion-t-libay/to_do_list">
             <To_do_list />
           </Route>
 
-          <Route path="/quotes_generator">
+          <Route path="/ion-t-libay/quotes_generator">
             <Quotes_generator />
           </Route>
 
-          <Route path="/notes">
+          <Route path="/ion-t-libay/notes">
             <Notes />
           </Route>
 
@@ -85,26 +87,16 @@ const App: React.FC = () => (
 
         <IonTabBar slot="bottom">
           {/* Home Tab Button */}
-          <IonTabButton tab="home" href="/home">
+          <IonTabButton tab="home" href="/ion-t-libay/home">
             <IonIcon aria-hidden="true" icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
        
-          <IonTabButton tab="profile" href="/profile">
+          <IonTabButton tab="profile" href="/ion-t-libay/profile">
             <IonIcon aria-hidden="true" icon={personOutline} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
-            {/*
-          <IonTabButton tab="clickcounter" href="/clickcounter">
-            <IonIcon aria-hidden="true" icon={speedometerOutline} />
-            <IonLabel>Click Counter</IonLabel>
-          </IonTabButton>
-        
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon aria-hidden="true" icon={calculatorOutline} />
-            <IonLabel>Calculator</IonLabel>
-          </IonTabButton>
-           */}
+         
         </IonTabBar>
 
       </IonTabs>

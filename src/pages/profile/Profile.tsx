@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonAlert, IonActionSheet, IonModal } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton,  IonButtons,IonAlert, IonActionSheet, IonModal } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import ExploreContainer from '../components/ExploreContainer';
+import ExploreContainer from '../../components/ExploreContainer';
 import './Profile.css';
 
 const Profile: React.FC = () => {
@@ -32,9 +32,11 @@ const Profile: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Profile</IonTitle>
-        </IonToolbar>
+      <IonToolbar>
+            <IonButtons slot='start'>
+            <IonTitle>Profile</IonTitle>
+            </IonButtons>
+          </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
@@ -44,8 +46,8 @@ const Profile: React.FC = () => {
         </IonHeader>
         
         <IonCard>
-          <img alt="Silhouette of mountains" id="cover_pic" onClick={toggleModal_coverpic} src="../src/assets/img/COVER_PIC.png" />
-          <img alt="Silhouette of mountains" id="profile_pic" onClick={toggleModal_profpic} src="../src/assets/img/PROFILE_PIC.png" />  
+          <img alt="Silhouette of mountains" id="cover_pic" onClick={toggleModal_coverpic} src="https://raw.githubusercontent.com/anjlibay/ion-t-libay/prod/src/assets/img/COVER_PIC.png" />
+          <img alt="Silhouette of mountains" id="profile_pic" onClick={toggleModal_profpic} src="https://raw.githubusercontent.com/anjlibay/ion-t-libay/prod/src/assets/img/PROFILE_PIC.png" />  
 
           <IonCardHeader>
             <IonCardTitle>Angela N. Libay</IonCardTitle>
