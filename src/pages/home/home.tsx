@@ -37,31 +37,31 @@ const cardData = [
     title: 'Click Counter',
     icon: speedometerOutline,
     subtitle: 'Applet #1',
-    link: '/ion-t-libay/Click_counter'
+    link: '/ion-t-libay/home/Click_counter'
   },
   {
     title: 'Calculator',
     icon: calculator,
     subtitle: 'Applet #2',
-    link: '/ion-t-libay/Calculator'
+    link: '/ion-t-libay/home/Calculator'
   },
   {
     title: 'To Do List',
     icon: pencil,
     subtitle: 'Applet #3',
-    link: '/ion-t-libay/To_do_list'
+    link: '/ion-t-libay/home/To_do_list'
   },
   {
     title: 'Quotes Generator',
     icon: chatbubble,
     subtitle: 'Applet #4',
-    link: '/ion-t-libay/Quotes_generator'
+    link: '/ion-t-libay/home/Quotes_generator'
   },
   {
     title: 'Notes',
     icon: readerOutline,
     subtitle: 'Applet #5',
-    link: '/ion-t-libay/notes',
+    link: '/ion-t-libay/home/notes',
     tags: {
       tag1: logoIonic,
       tag2: logoReact, 
