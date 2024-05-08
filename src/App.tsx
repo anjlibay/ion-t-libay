@@ -50,7 +50,8 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           
           {/* Application default route */}
-           <Route exact path="/ion-t-libay/">
+
+           <Route exact path="/ion-t-libay/home">
             <Redirect to="/ion-t-libay/home" />
           </Route>
 
